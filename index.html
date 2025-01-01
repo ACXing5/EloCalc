@@ -29,15 +29,36 @@
 			  <label for="p2">Player 2:</label>
 			  <input type="text" id="p2" name="p2"><br><br>
 			</form>
-		</div>
+		
 		<table>
 			<tr>
-				<p>Winner: </p>
+				<label>Winner:</label>
 				<td><button>1</button></td>
 				<td><button>2</button></td>
 				<td><button>Calculate</button></td>
 			</tr>
+			<tr>
+				<div class="output">
+					<label for="p1">Player 1 Result:</label>
+					<input type="text" name="p1out" id="p1out" readonly>
+				</div>
+				<div class="change">
+					<label for="change1">Change:</label>
+					<input type="text" name="change1" id="change1" readonly>
+				</div>
+			</tr>
+			<tr>
+				<div class="output">
+					<label for="p2">Player 2 Result:</label>
+					<input type="text" name="p2out" id="p2out" readonly>
+				</div>
+				<div class="change">
+					<label for="change2">Change:</label>
+					<input type="text" name="change2" id="change2" readonly>
+				</div>
+			</tr>
 		</table>
+		</div>
 	</div>
 </body>
 <script src="calc.js"></script>
