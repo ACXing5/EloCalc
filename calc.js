@@ -1,6 +1,8 @@
 console.log("Elo Calculator")
 document.getElementById('p1out').readOnly = true; //set this attribute in HTML file
 document.getElementById('p2out').readOnly = true; //set this attribute in HTML file
+document.getElementById('change1').readOnly = true; //set this attribute in HTML file
+document.getElementById('change2').readOnly = true; //set this attribute in HTML file
 
 let screen1 = document.getElementById('p1');
 let screen2 = document.getElementById('p2');
