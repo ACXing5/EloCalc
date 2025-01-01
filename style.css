@@ -8,6 +8,7 @@ html {
     background-color: rgb(23, 24, 37);
     font-family: 'Fjalla One', sans-serif;
     animation: fadein 1.5s;
+    overflow: scroll;
 }
 
 @keyframes fadein {
