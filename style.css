@@ -55,6 +55,16 @@ input {
     display: inline-block;
 }
 
+.output {
+    width: 60vw;
+    height: 10vh;
+}
+
+.change {
+    width: 20vw;
+    height: 10vh;
+}
+
 table {
     margin: auto;
 }
