@@ -50,9 +50,12 @@ input {
 }
 
 .calculator {
-    width: 78vw;
     padding: 0.25rem;
     display: inline-block;
+}
+
+.input {
+    width: 78vw;
 }
 
 .output {
