@@ -12,8 +12,8 @@ for (item of buttons) {
         // console.log(buttonText, "has been pressed");
         buttonText = e.target.innerText;
         if (buttonText == 'Calculate') {
-            // out1.value = something
-            // out2.value = something
+            out1.value = 1;
+            out2.value = 1;
         }
 
     })
