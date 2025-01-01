@@ -31,6 +31,7 @@ input {
     outline: none;
     text-align: right;
     border: none;
+    width: 78vw;
     font-size: 3rem;
     margin-bottom: 0.5rem;
     border-radius: 0.5rem;
@@ -52,18 +53,6 @@ input {
 .calculator {
     padding: 0.25rem;
     display: inline-block;
-}
-
-.in {
-    width: 78vw;
-}
-
-.output {
-    width: 56vw;
-}
-
-.change {
-    width: 20vw;
 }
 
 table {
