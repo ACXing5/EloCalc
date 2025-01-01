@@ -1,4 +1,4 @@
-console.log("Javascript Calculator Made by Harsh Trivedi\nhttps://harsh98trivedi.github.io")
+console.log("Elo Calculator")
 
 document.getElementById('answer').readOnly = true; //set this attribute in Html file
 let screen = document.getElementById('answer');
