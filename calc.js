@@ -1,6 +1,6 @@
 console.log("Elo Calculator")
-document.getElementById('p1out').readOnly = true; //set this attribute in Html file
-document.getElementById('p2out').readOnly = true; //set this attribute in Html file
+document.getElementById('p1out').readOnly = true; //set this attribute in HTML file
+document.getElementById('p2out').readOnly = true; //set this attribute in HTML file
 
 let screen1 = document.getElementById('p1');
 let screen2 = document.getElementById('p2');
@@ -20,7 +20,9 @@ for (item of buttons) {
 }
   window.onerror = function(){
       alert("PLEASE INPUT VALID EXPRESSION");
-      screenValue = "";
-      screen.value = screenValue;
+      screen1.value = "";
+      screen2.value = "";
+      out1.value = "";
+      out2.value = "";
       console.clear();
   }
