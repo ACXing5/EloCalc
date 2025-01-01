@@ -1,15 +1,18 @@
 console.log("Elo Calculator")
+document.getElementById('p1out').readOnly = true; //set this attribute in Html file
+document.getElementById('p2out').readOnly = true; //set this attribute in Html file
 
-document.getElementById('answer').readOnly = true; //set this attribute in Html file
-let screen = document.getElementById('answer');
+let screen1 = document.getElementById('p1');
+let screen2 = document.getElementById('p2');
+let out1 = document.getElementById('p1out');
+let out2 = document.getElementById('p2out');
 buttons = document.querySelectorAll('button');
-let screenValue = '';
 for (item of buttons) {
     item.addEventListener('click', (e) => {
         // console.log(buttonText, "has been pressed");
         buttonText = e.target.innerText;
         if (buttonText == 'Calculate') {
-            screen.value = eval(screenValue);
+            screen1.value = eval(screenValue);
         }
 
     })
