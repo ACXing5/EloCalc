@@ -33,6 +33,7 @@ input {
     text-align: right;
     border: none;
     width: 50vw;
+    height: 8vh;
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
     border-radius: 0.5rem;
@@ -64,7 +65,7 @@ button {
     border: none;
     background-color: white;
     width: 18vw;
-    height: 10vh;
+    height: 8vh;
     padding: 0.5rem 0;
     margin: 0.25vmax;
     font-size: 2rem;
