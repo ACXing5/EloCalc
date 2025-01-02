@@ -14,13 +14,13 @@ for (item of buttons) {
     item.addEventListener('click', (e) => {
         // console.log(buttonText, "has been pressed");
         buttonText = e.target.innerText;
-        if (buttonText === '1') {
+        if (buttonText === "1") {
             winner = 1;
             alert(1 was pressed);
-        } else if (buttonText === '2'){
+        } else if (buttonText === "2"){
             winner = 2;
             alert(2 was pressed);
-        } else if (buttonText === 'Calculate') {
+        } else if (buttonText === "Calculate") {
             s1 = screen1.value;
             s2 = screen2.value;
             if(s1.isInteger() && s2.isInteger() && s1 >= 1000 && s2 >= 1000){
