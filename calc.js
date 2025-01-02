@@ -147,7 +147,7 @@ document.addEventListener("keydown", function(event) {
         alert(winner + ", " + elos);
         try {
             elo1 = parseInt(elos[0]);
-            elo2 = parseInt(elos[2]);
+            elo2 = parseInt(elos[1]);
             if((winner == "W1" || winner == "W2")) {
                 alert("if entered");
                 outValue = calc(parseInt(elos[0]), parseInt(elos[1]), winner[1]);
