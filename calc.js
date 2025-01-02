@@ -6,11 +6,9 @@ let outscreen = document.getElementById('out');
 buttons = document.querySelectorAll('button');
 let screenValue = '';
 let outValue = '';
-alert("start");
 for (item of buttons) {
     item.addEventListener("click", (e) => {
         // console.log(buttonText, "has been pressed");
-        alert("hello");
         buttonText = e.target.innerText;
         if (buttonText == "1 Won") {
             buttonText = "W1";
@@ -41,22 +39,17 @@ for (item of buttons) {
             screen.value = screenValue;
         }
         else if (buttonText == "=") {
-            alert("Equal clicked");
             let s_len = screenValue.length;
             let winner = screenValue.substring(s_len - 2, s_len);
             let elos = (screenValue.substring(0, s_len - 2)).split("VS");
-            alert(winner + ", " + elos[0] + " " + elos[1]);
             try {
                 let elo1 = parseInt(elos[0]);
                 let elo2 = parseInt(elos[1]);
-                alert("Passed");
                 if(winner == "W1" || winner == "W2") {
-                    alert("if entered");
                     outValue = calc(elo1, elo2, winner.substring(1));
-                    alert("outValue");
                     outscreen.value = outValue;
                 } else {
-                    alert("1INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
+                    alert("INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
                 }
             } catch(err) {
                 alert("INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
@@ -140,32 +133,26 @@ function calc(p1, p2, winner) {
 
 document.addEventListener("keydown", function(event) {
     console.log(event.which);
-    alert(event.which);
     if(event.key <= 9) {
-        alert(typed);
         screenValue += event.key;
         screen.value = screenValue;
     }
     else if(event.keyCode == 13 || event.keyCode == 187)
     {
-        alert("Equal entered");
         let s_len = screen.value.length;
         winner = screen.value.substring(s_len - 2, s_len);
         elos = (screen.value.substring(0, s_len - 2)).split("VS");
-        alert(winner + ", " + elos);
         try {
             elo1 = parseInt(elos[0]);
             elo2 = parseInt(elos[1]);
             if(winner == "W1" || winner == "W2") {
-                alert("if entered");
                 outValue = calc(elo1, elo2, winner.substring(1));
-                alert("outValue");
                 outscreen.value = outValue;
             } else {
-                alert("2INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
+                alert("INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
             }
         } catch(err) {
-            alert("21INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
+            alert("INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
         }
     }
     else if(event.keyCode == 46 || event.keyCode == 67){
