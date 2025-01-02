@@ -1,6 +1,6 @@
 console.log("Elo Calculator")
 
-document.getElementById('answer').readOnly = true; //set this attribute in Html file
+document.getElementById('answer').readOnly = true; //set this attribute in HTML file
 let screen = document.getElementById('answer');
 let outscreen = document.getElementById('out');
 buttons = document.querySelectorAll('button');
