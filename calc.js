@@ -8,29 +8,29 @@ let screenValue = '';
 let outValue = '';
 alert("start");
 for (item of buttons) {
-    item.addEventListener('click', (e) => {
+    item.addEventListener("click", (e) => {
         // console.log(buttonText, "has been pressed");
         alert("hello");
         buttonText = e.target.innerText;
-        if (buttonText == '1 Won') {
-            buttonText = 'W1';
+        if (buttonText == "1 Won") {
+            buttonText = "W1";
             screenValue += buttonText;
             screen.value = screenValue;
         }
-        else if (buttonText == '2 Won') {
-            buttonText = 'W2';
+        else if (buttonText == "2 Won") {
+            buttonText = "W2";
             screenValue += buttonText;
             screen.value = screenValue;
         }
-        else if (buttonText == 'C') {
+        else if (buttonText == "C") {
             screenValue = "";
             screen.value = screenValue;
         }
-        else if (buttonText == 'CE') {
+        else if (buttonText == "CE") {
             let s_len = screen.value.length;
             if (s_len >= 2) {
                 let last_2 = screen.value.substring(s_len - 2, s_len);
-                if (last_2 == 'W1' || last_2 == 'W2' || last_2 == 'VS') {
+                if (last_2 == "W1" || last_2 == "W2" || last_2 == "VS") {
                     screenValue = screen.value.substring(0, s_len - 2);
                 } else {
                     screenValue = screen.value.substring(0, s_len - 1);
@@ -40,7 +40,7 @@ for (item of buttons) {
             }
             screen.value = screenValue;
         }
-        else if (buttonText == '=') {
+        else if (buttonText == "=") {
             alert("Equal clicked");
             let s_len = screenValue.length;
             let winner = screenValue.substring(s_len - 2, s_len);
@@ -52,7 +52,7 @@ for (item of buttons) {
                 alert("Passed");
                 if(winner == "W1" || winner == "W2") {
                     alert("if entered");
-                    outValue = calc(elo1, elo2, winner[1]);
+                    outValue = calc(elo1, elo2, winner.substring(1));
                     alert("outValue");
                     outscreen.value = outValue;
                 } else {
@@ -156,9 +156,9 @@ document.addEventListener("keydown", function(event) {
         try {
             elo1 = parseInt(elos[0]);
             elo2 = parseInt(elos[1]);
-            if((winner == "W1" || winner == "W2")) {
+            if(winner == "W1" || winner == "W2") {
                 alert("if entered");
-                outValue = calc(elo1, elo2, winner[1]);
+                outValue = calc(elo1, elo2, winner.substring(1));
                 alert("outValue");
                 outscreen.value = outValue;
             } else {
@@ -178,7 +178,7 @@ document.addEventListener("keydown", function(event) {
         let s_len = screen.value.length;
         if (s_len >= 2) {
             let last_2 = screen.value.substring(s_len - 2, s_len);
-            if (last_2 == 'W1' || last_2 == 'W2' || last_2 == 'VS') {
+            if (last_2 == "W1" || last_2 == "W2" || last_2 == "VS") {
                 screenValue = screen.value.substring(0, s_len - 2);
             } else {
                 screenValue = screen.value.substring(0, s_len - 1);
