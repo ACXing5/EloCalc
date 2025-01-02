@@ -39,6 +39,7 @@ for (item of buttons) {
             screen.value = screenValue;
         }
         else if (buttonText == '=') {
+            let s_len = screen.value.length;
             winner = screen.value.substring(s_len - 2, s_len);
             elos = screen.value.substring(0, s_len - 2).split("VS");
             if((winner == "W1" || winner == "W2") && elos[0].isInteger() && elos[1].isInteger()) {
