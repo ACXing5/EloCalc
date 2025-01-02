@@ -50,7 +50,7 @@ for (item of buttons) {
                 let elo1 = parseInt(elos[0]);
                 let elo2 = parseInt(elos[1]);
                 alert("Passed");
-                if((winner == "W1" || winner == "W2")) {
+                if(winner == "W1" || winner == "W2") {
                     alert("if entered");
                     outValue = calc(elo1), parseInt(elo2), winner[1]);
                     alert("outValue");
