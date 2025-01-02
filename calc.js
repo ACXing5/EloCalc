@@ -20,7 +20,8 @@ for (item of buttons) {
             screen.value = screenValue;
         }
         else if (buttonText == 'C') {
-            screen.value = "";
+            screenValue = "";
+            screen.value = screenValue;
         }
         else if (buttonText == 'CE') {
             alert("CE");
@@ -43,7 +44,7 @@ for (item of buttons) {
             if((winner == "W1" || winner == "W2") && elos[0].isInteger() && elos[1].isInteger()) {
                 outscreen.value = calc(parseInt(elos[0]), parseInt(elos[1]), winner);
             } else {
-                alert("INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. Ex: 1000VS1250W2");
+                alert("1INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
             }
         }
         else {
@@ -131,7 +132,7 @@ document.addEventListener("keydown", function(event) {
         if((winner == "W1" || winner == "W2") && elos[0].isInteger() && elos[1].isInteger()) {
             outscreen.value = calc(parseInt(elos[0]), parseInt(elos[1]), winner);
         } else {
-            alert("INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. Ex: 1000VS1250W2");
+            alert("2INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
         }
     }
     else if(event.keyCode == 46 || event.keyCode == 67){
@@ -146,6 +147,6 @@ document.addEventListener("keydown", function(event) {
   })
 
   window.onerror = function(){
-      alert("INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. Ex: 1000VS1250W2");
+      alert("3INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
       console.clear();
   }
