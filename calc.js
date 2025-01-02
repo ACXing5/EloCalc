@@ -138,7 +138,9 @@ function calc(p1, p2, winner) {
 
 document.addEventListener("keydown", function(event) {
     console.log(event.which);
+    alert(event.which);
     if(event.key <= 9) {
+        alert(typed);
         screenValue += event.key;
         screen.value = screenValue;
     }
