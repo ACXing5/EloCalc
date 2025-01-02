@@ -8,7 +8,9 @@ let out1 = document.getElementById('p1out');
 let out2 = document.getElementById('p2out');
 let winner = -1;
 buttons = document.querySelectorAll('button');
+alert("Hello");
 for (item of buttons) {
+    alert("After");
     item.addEventListener('click', (e) => {
         // console.log(buttonText, "has been pressed");
         buttonText = e.target.innerText;
