@@ -22,9 +22,9 @@ for (item of buttons) {
             s1 = screen1.value;
             s2 = screen2.value;
             if(s1.isInteger() && s2.isInteger() && s1 >= 1000 && s2 >= 1000){
-                result = calc(s1, s2, winner);
-                out1.value = result[0];
-                out2.value = result[1];    
+                result = calc(parseInt(s1), parseInt(s2), winner);
+                out1.value = result[0] + " +(" + result[1] + ")";
+                out2.value = result[2] + " +(" + result[3] + ")";    
             } else {
                 alert("PLEASE GIVE 2 INTEGERS GREATER THAN OR EQUAL TO 1000.");
             }
@@ -41,7 +41,64 @@ const K3 = 40;
 const K4 = 32;
 
 function calc(p1, p2, winner) {
-        return 1;
+    qA = Math.pow(10, p1/400);
+    qB = Math.pow(10, p2/400);
+    eA = qA / (qA + qB);
+    eB = qB / (qA + qB);
+
+    let multA = 1, multB = 1;
+    if (winner == 1) {
+        sA = 1;
+        sB = 0;
+        if (p2 < 1100) {
+            multB = 0.5;
+        }
+    } else if (winner == 2) {
+        sA = 0;
+        sB = 1;
+        if (p1 < 1100) {
+            multA = 0.5;
+        }
+    } else {
+        sA = 0.5;
+        sB = 0.5;
+    }
+
+    if (p1 < 1100) {
+        kA = K1;
+    } else if (p1 < 1300) {
+        kA = K2;
+    } else if (p1 < 1600) {
+        kA = K3;
+    } else {
+        kA = K4;
+    }
+
+    if (p2 < 1100) {
+        kB = K1;
+    } else if (p2 < 1300) {
+        kB = K2;
+    } else if (p2 < 1600) {
+        kB = K3;
+    } else {
+        kB = K4;
+    }
+
+    changeA = kA * (sA - eA) * multA;
+    changeB = kB * (sB - eB) * multB;
+    rA = Math.round(p1 + changeA);
+    rB = Math.round(p2 + changeB);
+    cA = Math.round(changeA);
+    cB = Math.round(changeB);
+    if (rA < 1000) {
+        rA = 1000;
+        cA = Math.min(0, rA-p1);
+    }
+    if (rB < 1000) {
+        rB = 1000;
+        cB = Math.min(0, rB-p2);
+    }
+    return [rA, cA, rB, cB];
 }
 
   window.onerror = function(){
