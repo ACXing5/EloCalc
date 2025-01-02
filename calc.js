@@ -129,6 +129,7 @@ document.addEventListener("keydown", function(event) {
     console.log(event.which);
     if(event.keyCode == 13 || event.keyCode == 187)
     {
+        alert("Equal entered");
         let s_len = screen.value.length;
         winner = screen.value.substring(s_len - 2, s_len);
         elos = screen.value.substring(0, s_len - 2).split("VS");
