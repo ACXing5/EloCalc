@@ -10,6 +10,7 @@ alert("start");
 for (item of buttons) {
     item.addEventListener('click', (e) => {
         // console.log(buttonText, "has been pressed");
+        alert("hello");
         buttonText = e.target.innerText;
         if (buttonText == '1 Won') {
             buttonText = 'W1';
