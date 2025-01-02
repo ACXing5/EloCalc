@@ -118,13 +118,18 @@ function calc(p1, p2, winner) {
     rB = Math.round(p2 + changeB);
     cA = Math.round(changeA);
     cB = Math.round(changeB);
-    if (rA < 1000) {
-        rA = 1000;
-        cA = Math.min(0, rA-p1);
-    }
-    if (rB < 1000) {
-        rB = 1000;
-        cB = Math.min(0, rB-p2);
+    
+    // CHANGE IF MINIMUM IS 1000 OR NOT
+    min_on = false;
+    if (min_on) {
+        if (rA < 1000) {
+            rA = 1000;
+            cA = Math.min(0, rA-p1);
+        }
+        if (rB < 1000) {
+            rB = 1000;
+            cB = Math.min(0, rB-p2);
+        }
     }
     out1 = rA + " +(" + cA + ")";
     out2 = rB + " +(" + cB + ")";
