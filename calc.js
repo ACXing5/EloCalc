@@ -41,12 +41,12 @@ for (item of buttons) {
         else if (buttonText == '=') {
             alert("Equal clicked");
             let s_len = screen.value.length;
-            winner = screen.value.substring(s_len - 2, s_len);
-            elos = (screen.value.substring(0, s_len - 2)).split("VS");
+            let winner = screen.value.substring(s_len - 2, s_len);
+            let elos = (screen.value.substring(0, s_len - 2)).split("VS");
             alert(winner + ", " + elos[0] + " " + elos[1]);
             try {
-                elo1 = parseInt(elos[0]);
-                elo2 = parseInt(elos[1]);
+                let elo1 = parseInt(elos[0]);
+                let elo2 = parseInt(elos[1]);
                 alert("Passed");
                 if((winner == "W1" || winner == "W2")) {
                     alert("if entered");
