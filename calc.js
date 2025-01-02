@@ -18,6 +18,24 @@ for (item of buttons) {
             screenValue += buttonText;
             screen.value = screenValue;
         }
+        else if (buttonText == 'C') {
+            screenValue += "";
+            screen.value = screenValue;
+        }
+        else if (buttonText == 'CE') {
+            let s_len = screen.value.length;
+            if (s_len >= 2) {
+                let last_2 = screen.value.substring(s_len - 2, s_len);
+                if (last_2 == 'W1' || last_2 == 'W2' || last_2 == 'VS') {
+                    screenValue = screen.value.substring(0, s_len - 2);
+                } else {
+                    screenValue = screen.value.substring(0, s_len - 1);
+                }
+            } else {
+                screenValue = screen.value.substring(0, s_len - 1);
+            }
+            screen.value = screenValue;
+        }
         else if (buttonText == '=') {
             screen.value = eval(screenValue);
         }
