@@ -46,6 +46,7 @@ for (item of buttons) {
             alert(winner + ", " + elos);
             if((winner == "W1" || winner == "W2") && elos[0].isInteger() && elos[1].isInteger()) {
                 outValue = calc(parseInt(elos[0]), parseInt(elos[1]), winner[1]);
+                alert("outValue");
                 outscreen.value = outValue;
             } else {
                 alert("1INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
