@@ -128,10 +128,11 @@ document.addEventListener("keydown", function(event) {
     console.log(event.which);
     if(event.keyCode == 13 || event.keyCode == 187)
     {
+        let s_len = screen.value.length;
         winner = screen.value.substring(s_len - 2, s_len);
         elos = screen.value.substring(0, s_len - 2).split("VS");
         if((winner == "W1" || winner == "W2") && elos[0].isInteger() && elos[1].isInteger()) {
-            outscreen.value = calc(parseInt(elos[0]), parseInt(elos[1]), winner);
+            outscreen.value = calc(parseInt(elos[0]), parseInt(elos[1]), winner[1]);
         } else {
             alert("2INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
         }
