@@ -14,6 +14,7 @@ for (item of buttons) {
     item.addEventListener('click', (e) => {
         // console.log(buttonText, "has been pressed");
         buttonText = e.target.innerText;
+        alert(buttonText);
         if (buttonText.equals("1")) {
             winner = 1;
             alert(1 was pressed);
