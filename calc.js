@@ -164,6 +164,10 @@ document.addEventListener("keydown", function(event) {
         }
         screen.value = screenValue;
     }
+    else if(event.key <= 9) {
+        screenValue += event.key;
+        screen.value = screenValue;
+    }
   })
 
   // window.onerror = function(){
