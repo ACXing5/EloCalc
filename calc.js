@@ -6,6 +6,7 @@ let outscreen = document.getElementById('out');
 buttons = document.querySelectorAll('button');
 let screenValue = '';
 let outValue = '';
+alert("start");
 for (item of buttons) {
     item.addEventListener('click', (e) => {
         // console.log(buttonText, "has been pressed");
