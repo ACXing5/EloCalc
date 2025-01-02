@@ -16,8 +16,10 @@ for (item of buttons) {
         buttonText = e.target.innerText;
         if (buttonText == '1') {
             winner = 1;
+            alert(1 was pressed);
         } else if (buttonText == '2'){
             winner = 2;
+            alert(2 was pressed);
         } else if (winner != -1 && buttonText == 'Calculate') {
             s1 = screen1.value;
             s2 = screen2.value;
