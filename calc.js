@@ -153,13 +153,13 @@ document.addEventListener("keydown", function(event) {
             elo1 = parseInt(elos[0]);
             elo2 = parseInt(elos[1]);
             if((winner == "W1" || winner == "W2")) {
-                    alert("if entered");
-                    outValue = calc(elo1), parseInt(elo2), winner[1]);
-                    alert("outValue");
-                    outscreen.value = outValue;
-                } else {
-                    alert("2INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
-                }
+                alert("if entered");
+                outValue = calc(elo1), parseInt(elo2), winner[1]);
+                alert("outValue");
+                outscreen.value = outValue;
+            } else {
+                alert("2INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
+            }
         } catch(err) {
             alert("21INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
         }
