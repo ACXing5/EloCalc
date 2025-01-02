@@ -43,7 +43,7 @@ for (item of buttons) {
             let s_len = screen.value.length;
             winner = screen.value.substring(s_len - 2, s_len);
             elos = (screen.value.substring(0, s_len - 2)).split("VS");
-            alert(winner + ", " + elos);
+            alert(winner + ", " + elos[0] + " " + elos[1]);
             try {
                 elo1 = parseInt(elos[0]);
                 elo2 = parseInt(elos[1]);
