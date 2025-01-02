@@ -52,7 +52,7 @@ for (item of buttons) {
                 alert("Passed");
                 if(winner == "W1" || winner == "W2") {
                     alert("if entered");
-                    outValue = calc(elo1), parseInt(elo2), winner[1]);
+                    outValue = calc(elo1, elo2, winner[1]);
                     alert("outValue");
                     outscreen.value = outValue;
                 } else {
@@ -158,7 +158,7 @@ document.addEventListener("keydown", function(event) {
             elo2 = parseInt(elos[1]);
             if((winner == "W1" || winner == "W2")) {
                 alert("if entered");
-                outValue = calc(elo1), parseInt(elo2), winner[1]);
+                outValue = calc(elo1, elo2, winner[1]);
                 alert("outValue");
                 outscreen.value = outValue;
             } else {
