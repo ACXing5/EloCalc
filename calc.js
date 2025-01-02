@@ -45,6 +45,7 @@ for (item of buttons) {
             elos = (screen.value.substring(0, s_len - 2)).split("VS");
             alert(winner + ", " + elos);
             if((winner == "W1" || winner == "W2") && elos[0].isInteger() && elos[1].isInteger()) {
+                alert("if entered");
                 outValue = calc(parseInt(elos[0]), parseInt(elos[1]), winner[1]);
                 alert("outValue");
                 outscreen.value = outValue;
@@ -72,13 +73,13 @@ function calc(p1, p2, winner) {
     eB = qB / (qA + qB);
 
     let multA = 1, multB = 1;
-    if (winner == 1) {
+    if (winner == '1') {
         sA = 1;
         sB = 0;
         if (p2 < 1100) {
             multB = 0.5;
         }
-    } else if (winner == 2) {
+    } else if (winner == '2') {
         sA = 0;
         sB = 1;
         if (p1 < 1100) {
