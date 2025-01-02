@@ -44,6 +44,7 @@ for (item of buttons) {
             winner = screen.value.substring(s_len - 2, s_len);
             elos = (screen.value.substring(0, s_len - 2)).split("VS");
             alert(winner + ", " + elos);
+            alert((winner == "W1" || winner == "W2") && elos[0].isInteger() && elos[1].isInteger());
             if((winner == "W1" || winner == "W2") && elos[0].isInteger() && elos[1].isInteger()) {
                 alert("if entered");
                 outValue = calc(parseInt(elos[0]), parseInt(elos[1]), winner[1]);
