@@ -165,6 +165,6 @@ document.addEventListener("keydown", function(event) {
   })
 
   window.onerror = function(){
-      alert("PLEASE INPUT VALID EXPRESSION");
+      alert("INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. Ex: 1000VS1250W2");
       console.clear();
   }
