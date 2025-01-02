@@ -1,4 +1,4 @@
-console.log("Javascript Calculator Made by Harsh Trivedi\nhttps://harsh98trivedi.github.io")
+console.log("Elo Calculator")
 
 document.getElementById('answer').readOnly = true; //set this attribute in Html file
 let screen = document.getElementById('answer');
@@ -8,13 +8,14 @@ for (item of buttons) {
     item.addEventListener('click', (e) => {
         // console.log(buttonText, "has been pressed");
         buttonText = e.target.innerText;
-        if (buttonText == 'X') {
-            buttonText = '*';
+        if (buttonText == '1 Won') {
+            buttonText = 'W1';
             screenValue += buttonText;
             screen.value = screenValue;
         }
-        else if (buttonText == 'C') {
-            screenValue = "";
+        else if (buttonText == '2 Won') {
+            buttonText = 'W2';
+            screenValue += buttonText;
             screen.value = screenValue;
         }
         else if (buttonText == '=') {
