@@ -46,7 +46,7 @@ for (item of buttons) {
             alert(winner + ", " + elos);
             try {
                 elo1 = parseInt(elos[0]);
-                elo2 = parseInt(elos[2]);
+                elo2 = parseInt(elos[1]);
                 alert("Passed");
                 if((winner == "W1" || winner == "W2")) {
                     alert("if entered");
