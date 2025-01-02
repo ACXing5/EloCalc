@@ -20,7 +20,7 @@ for (item of buttons) {
         } else if (buttonText == '2'){
             winner = 2;
             alert(2 was pressed);
-        } else if (winner != -1 && buttonText == 'Calculate') {
+        } else if (buttonText == 'Calculate') {
             s1 = screen1.value;
             s2 = screen2.value;
             if(s1.isInteger() && s2.isInteger() && s1 >= 1000 && s2 >= 1000){
@@ -102,6 +102,31 @@ function calc(p1, p2, winner) {
     }
     return [rA, cA, rB, cB];
 }
+
+document.addEventListener("keydown", function(event) {
+    console.log(event.which);
+    if(event.keyCode == 13 || event.keyCode == 187)
+    {
+        screen.value = eval(screenValue);
+    }
+    else if(event.keyCode == 46){
+        screenValue = "";
+        screen.value = screenValue;
+        console.clear();
+    }
+    else if(event.keyCode == 8){
+        screenValue = screenValue.slice(0, -1);
+        screen.value = screenValue;
+    }
+    else if(event.keyCode == 67){
+        screenValue = "";
+        screen.value = screenValue;
+        console.clear();
+    }
+    else if(event.keyCode == 82){
+        location.reload();
+    }
+  })
 
   window.onerror = function(){
       alert("PLEASE INPUT VALID EXPRESSION");
