@@ -141,7 +141,18 @@ document.addEventListener("keydown", function(event) {
         console.clear();
     }
     else if(event.keyCode == 8){
-        screenValue = screenValue.slice(0, -1);
+        alert("Backspace");
+        let s_len = screen.value.length;
+        if (s_len >= 2) {
+            let last_2 = screen.value.substring(s_len - 2, s_len);
+            if (last_2 == 'W1' || last_2 == 'W2' || last_2 == 'VS') {
+                screenValue = screen.value.substring(0, s_len - 2);
+            } else {
+                screenValue = screen.value.substring(0, s_len - 1);
+            }
+        } else {
+            screenValue = screen.value.substring(0, s_len - 1);
+        }
         screen.value = screenValue;
     }
   })
