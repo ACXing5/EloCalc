@@ -5,6 +5,7 @@ let screen = document.getElementById('answer');
 let outscreen = document.getElementById('out');
 buttons = document.querySelectorAll('button');
 let screenValue = '';
+let outValue = '';
 for (item of buttons) {
     item.addEventListener('click', (e) => {
         // console.log(buttonText, "has been pressed");
@@ -38,13 +39,14 @@ for (item of buttons) {
             screen.value = screenValue;
         }
         else if (buttonText == '=') {
-            alert("Equal entered");
+            alert("Equal clicked");
             let s_len = screen.value.length;
             winner = screen.value.substring(s_len - 2, s_len);
             elos = (screen.value.substring(0, s_len - 2)).split("VS");
             alert(winner + ", " + elos);
             if((winner == "W1" || winner == "W2") && elos[0].isInteger() && elos[1].isInteger()) {
-                outscreen.value = calc(parseInt(elos[0]), parseInt(elos[1]), winner[1]);
+                outValue = calc(parseInt(elos[0]), parseInt(elos[1]), winner[1]);
+                outscreen.value = outValue;
             } else {
                 alert("1INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
             }
@@ -134,7 +136,8 @@ document.addEventListener("keydown", function(event) {
         winner = screen.value.substring(s_len - 2, s_len);
         elos = screen.value.substring(0, s_len - 2).split("VS");
         if((winner == "W1" || winner == "W2") && elos[0].isInteger() && elos[1].isInteger()) {
-            outscreen.value = calc(parseInt(elos[0]), parseInt(elos[1]), winner[1]);
+            outValue = calc(parseInt(elos[0]), parseInt(elos[1]), winner[1]);
+            outscreen.value = outValue;
         } else {
             alert("2INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
         }
