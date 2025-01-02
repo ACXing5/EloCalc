@@ -20,8 +20,7 @@ for (item of buttons) {
             screen.value = screenValue;
         }
         else if (buttonText == 'C') {
-            screenValue += "";
-            screen.value = screenValue;
+            screen.value = "";
         }
         else if (buttonText == 'CE') {
             let s_len = screen.value.length;
