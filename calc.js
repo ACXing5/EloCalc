@@ -24,7 +24,6 @@ for (item of buttons) {
             screen.value = screenValue;
         }
         else if (buttonText == 'CE') {
-            alert("CE");
             let s_len = screen.value.length;
             if (s_len >= 2) {
                 let last_2 = screen.value.substring(s_len - 2, s_len);
@@ -39,9 +38,11 @@ for (item of buttons) {
             screen.value = screenValue;
         }
         else if (buttonText == '=') {
+            alert("Equal entered");
             let s_len = screen.value.length;
             winner = screen.value.substring(s_len - 2, s_len);
-            elos = screen.value.substring(0, s_len - 2).split("VS");
+            elos = (screen.value.substring(0, s_len - 2)).split("VS");
+            alert(winner + ", " + elos);
             if((winner == "W1" || winner == "W2") && elos[0].isInteger() && elos[1].isInteger()) {
                 outscreen.value = calc(parseInt(elos[0]), parseInt(elos[1]), winner[1]);
             } else {
