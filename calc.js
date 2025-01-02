@@ -138,7 +138,11 @@ function calc(p1, p2, winner) {
 
 document.addEventListener("keydown", function(event) {
     console.log(event.which);
-    if(event.keyCode == 13 || event.keyCode == 187)
+    if(event.key <= 9) {
+        screenValue += event.key;
+        screen.value = screenValue;
+    }
+    else if(event.keyCode == 13 || event.keyCode == 187)
     {
         alert("Equal entered");
         let s_len = screen.value.length;
@@ -178,10 +182,6 @@ document.addEventListener("keydown", function(event) {
         } else {
             screenValue = screen.value.substring(0, s_len - 1);
         }
-        screen.value = screenValue;
-    }
-    else if(event.key <= 9) {
-        screenValue += event.key;
         screen.value = screenValue;
     }
   })
