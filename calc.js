@@ -159,7 +159,7 @@ document.addEventListener("keydown", function(event) {
     }
   })
 
-  window.onerror = function(){
-      alert("3INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
-      console.clear();
-  }
+  // window.onerror = function(){
+  //     alert("3INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
+  //     console.clear();
+  // }
