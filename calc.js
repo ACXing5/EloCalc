@@ -40,9 +40,9 @@ for (item of buttons) {
         }
         else if (buttonText == '=') {
             alert("Equal clicked");
-            let s_len = screen.value.length;
-            let winner = screen.value.substring(s_len - 2, s_len);
-            let elos = (screen.value.substring(0, s_len - 2)).split("VS");
+            let s_len = screenValue.length;
+            let winner = screenValue.substring(s_len - 2, s_len);
+            let elos = (screenValue.substring(0, s_len - 2)).split("VS");
             alert(winner + ", " + elos[0] + " " + elos[1]);
             try {
                 let elo1 = parseInt(elos[0]);
@@ -50,7 +50,7 @@ for (item of buttons) {
                 alert("Passed");
                 if((winner == "W1" || winner == "W2")) {
                     alert("if entered");
-                    outValue = calc(parseInt(elos[0]), parseInt(elos[1]), winner[1]);
+                    outValue = calc(elo1), parseInt(elo2), winner[1]);
                     alert("outValue");
                     outscreen.value = outValue;
                 } else {
@@ -149,13 +149,13 @@ document.addEventListener("keydown", function(event) {
             elo1 = parseInt(elos[0]);
             elo2 = parseInt(elos[1]);
             if((winner == "W1" || winner == "W2")) {
-                alert("if entered");
-                outValue = calc(parseInt(elos[0]), parseInt(elos[1]), winner[1]);
-                alert("outValue");
-                outscreen.value = outValue;
-            } else {
-                alert("2INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
-            }
+                    alert("if entered");
+                    outValue = calc(elo1), parseInt(elo2), winner[1]);
+                    alert("outValue");
+                    outscreen.value = outValue;
+                } else {
+                    alert("2INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
+                }
         } catch(err) {
             alert("21INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. \nEx: 1000VS1250W2");
         }
