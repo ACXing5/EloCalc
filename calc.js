@@ -2,6 +2,7 @@ console.log("Elo Calculator")
 
 document.getElementById('answer').readOnly = true; //set this attribute in Html file
 let screen = document.getElementById('answer');
+let outscreen = document.getElementById('out');
 buttons = document.querySelectorAll('button');
 let screenValue = '';
 for (item of buttons) {
@@ -37,7 +38,13 @@ for (item of buttons) {
             screen.value = screenValue;
         }
         else if (buttonText == '=') {
-            screen.value = eval(screenValue);
+            winner = screen.value.substring(s_len - 2, s_len);
+            elos = screen.value.substring(0, s_len - 2).split("VS");
+            if((winner == "W1" || winner == "W2") && elos[0].isInteger() && elos[1].isInteger()) {
+                outscreen.value = calc(parseInt(elos[0]), parseInt(elos[1]), winner);
+            } else {
+                alert("INVALID INPUT! SHOULD BE: [elo1]VS[elo2][W1 or W2]. Ex: 1000VS1250W2");
+            }
         }
         else {
             screenValue += buttonText;
@@ -45,6 +52,74 @@ for (item of buttons) {
         }
 
     })
+}
+
+const K1 = 80;
+const K2 = 50
+const K3 = 40;
+const K4 = 32;
+
+function calc(p1, p2, winner) {
+    qA = Math.pow(10, p1/400);
+    qB = Math.pow(10, p2/400);
+    eA = qA / (qA + qB);
+    eB = qB / (qA + qB);
+
+    let multA = 1, multB = 1;
+    if (winner == 1) {
+        sA = 1;
+        sB = 0;
+        if (p2 < 1100) {
+            multB = 0.5;
+        }
+    } else if (winner == 2) {
+        sA = 0;
+        sB = 1;
+        if (p1 < 1100) {
+            multA = 0.5;
+        }
+    } else {
+        sA = 0.5;
+        sB = 0.5;
+    }
+
+    if (p1 < 1100) {
+        kA = K1;
+    } else if (p1 < 1300) {
+        kA = K2;
+    } else if (p1 < 1600) {
+        kA = K3;
+    } else {
+        kA = K4;
+    }
+
+    if (p2 < 1100) {
+        kB = K1;
+    } else if (p2 < 1300) {
+        kB = K2;
+    } else if (p2 < 1600) {
+        kB = K3;
+    } else {
+        kB = K4;
+    }
+
+    changeA = kA * (sA - eA) * multA;
+    changeB = kB * (sB - eB) * multB;
+    rA = Math.round(p1 + changeA);
+    rB = Math.round(p2 + changeB);
+    cA = Math.round(changeA);
+    cB = Math.round(changeB);
+    if (rA < 1000) {
+        rA = 1000;
+        cA = Math.min(0, rA-p1);
+    }
+    if (rB < 1000) {
+        rB = 1000;
+        cB = Math.min(0, rB-p2);
+    }
+    out1 = rA + " +(" + cA + ")";
+    out2 = rB + " +(" + cB + ")";
+    return out1 + ", " + out2;
 }
 
 document.addEventListener("keydown", function(event) {
@@ -91,7 +166,5 @@ document.addEventListener("keydown", function(event) {
 
   window.onerror = function(){
       alert("PLEASE INPUT VALID EXPRESSION");
-      screenValue = "";
-      screen.value = screenValue;
       console.clear();
   }
