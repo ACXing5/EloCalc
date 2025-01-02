@@ -23,6 +23,7 @@ for (item of buttons) {
             screen.value = "";
         }
         else if (buttonText == 'CE') {
+            alert("CE");
             let s_len = screen.value.length;
             if (s_len >= 2) {
                 let last_2 = screen.value.substring(s_len - 2, s_len);
