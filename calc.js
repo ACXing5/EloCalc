@@ -179,6 +179,10 @@ document.addEventListener("keydown", function(event) {
         }
         screen.value = screenValue;
     }
+    else if(event.keyCode == 86) {
+        screenValue += "VS";
+        screen.value = screenValue;
+    }
   })
 
   // window.onerror = function(){
